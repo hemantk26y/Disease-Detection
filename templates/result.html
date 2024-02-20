@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>COVID-19 Detection</title>
+    <link rel="icon" href="icon1.jpg">
+    <link rel="stylesheet" href="{{url_for('static', filename='result.css')}}">
+    <div>
+        <nav>
+            <h4 class="Heading">DiagnoXpert</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a class="active" href="#">Detection</a>
+                    <ul class="dropdown">
+                        <li><a href="/Pneumonia">Pneumonia</a></li>
+                        <li><a href="/COVID">COVID-19</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</head>
+<body>
+    <div id="pop">      
+        <center>
+            <h1 class="color">ANALYSIS RESULT</h1>
+            <br>
+        </center>
+        <img id="output" src="{{url_for('static', filename='uploads/' + filename)}}" style="position: relative; margin-left: 30px;margin-bottom: 20px;vertical-align: middle;vertical-align: middle;" width="250px" height="150px">
+        <div style="position:relative; float: right; margin-right: 90px;">
+            <em class="color">Name: <p id="p1" style="color:white;">{{ first_name }} {{ last_name }}</p></em><br>
+            <em class="color">Age: <p id="p2" style="color:white;">{{ age }}</p></em><br>
+            <em class="color">Gender: <p id="p3" style="color:white;">{{ gender }}</p></em><br>
+            <em class="color">Result: <p id="p4" style="color:white;">{{ prediction }}</p></em><br>
+        </div>
+    </div>
+</body>
+</html>

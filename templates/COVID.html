@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COVID-19 Detection</title>
+    <link rel="icon" href="icon1.jpg">
+    <link rel="stylesheet" href="{{url_for('static', filename='covid.css')}}">
+</head>
+
+<body>
+    <div>
+        <nav>
+            <h4 class="Heading">DiagnoXpert</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a class="active" href="#">Detection</a>
+                    <ul class="dropdown">
+                        <li><a href="/Pneumonia">Pneumonia</a></li>
+                        <li><a href="/COVID">COVID-19</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+        <br>
+        <br>
+        <div class="form">
+            <h2 class="center" style="color:white">COVID-19 DETECTION</h2>
+            <hr><br>
+            <div class="text">
+                Fill in the Details
+            </div>
+            <form id="upload-form" action="/covid_form" method="post" enctype="multipart/form-data">
+                <label for="name" style="margin-left: 50px; font-size: larger;">Full Name:</label>
+                <input type="text" id="name" placeholder="First" name="first_name" style="margin-left: 60px;">
+                <input type="text" id="name" placeholder="Last" name="last_name"><br>
+                <br>
+                <label for="phone" style="margin-left: 50px; font-size: larger;">Phone Number:</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" style="margin-left: 26px;" name="phone_number"><br>
+                <br>
+                <label for="gender" style="margin-left: 50px; font-size: larger;">Gender:</label>
+                <select name="gender" id="gender" style="margin-left: 85px;">
+                    <option value="select" selected>Select..</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <br>
+                <label for="email" style="margin-left: 50px; font-size: larger;">E-mail ID:</label>
+                <input type="text" id="email" style="margin-left: 64px;" name="email"><br>
+                <br>
+                <label for="age" style="margin-left: 50px; font-size: larger;">Age:</label>
+                <input type="text" id="age" style="margin-left: 108px;" name="age"><br>
+                <br>
+                <label for="X-Ray" style="margin-left: 50px; font-size: larger;">Select Image:</label>
+                <input type="file" accept="image/*" style="margin-left: 41px;" name="image"><br>
+                <center>
+                    <p style="color:rgb(255, 255, 255)">*Input CT-scan Image</p>
+                </center>
+                <br>
+                <center><input type="submit" value="Upload"></center>
+                <br>
+            </form>
+        </div>
+    </section>
+    <div id="pop" hidden="true">      
+        <center>
+            <h1 class="color">ANALYSIS RESULT</h1>
+            <br>
+        </center>
+        <img id="output" style="position: relative; margin-left: 20px;margin-bottom: 20px;vertical-align: middle;" width="250px" height="150px">
+        <div style="position:relative; float: right; margin-right: 90px;">
+            <em class="color">Name: <p id="p1" style="color:white;">{{ first_name }} {{ last_name }}</p></em><br>
+            <em class="color">Age: <p id="p2" style="color:white;">{{ age }}</p></em><br>
+            <em class="color">Gender: <p id="p3" style="color:white;">{{ gender }}</p></em><br>
+            <em class="color">Result: <p id="p4" style="color:white;">{{ prediction }}</p></em><br>
+        </div>
+    </div>    
+    </div>
+</body>
+
+</html>

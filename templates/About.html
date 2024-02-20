@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <title>Disease Detection</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='About.css')}}">
+    <link rel="icon" href="icon1.jpg">
+    <div>
+        <nav>
+            <h4 class="Heading">DiagnoXpert</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/About">About</a></li>
+                <li><a href="#">Detection</a>
+                    <ul class="dropdown">
+                        <li><a href="/Pneumonia">Pneumonia</a></li>
+                        <li><a href="/COVID">COVID-19</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</head>
+
+<body>
+    <aside id="toc">
+        <p style="font-size: 24px;"><u>Table Of Contents</u></p>
+        <br>
+        <ol>
+            <li>Types of Lung Disease
+                <ol>
+                    <li><a href="#t1">Airway Diseases</a></li>
+                    <li><a href="#t2">Lung Tissue Diseases</a></li>
+                    <li><a href="#t3">Lung Circulation Diseases</a></li>
+                </ol>
+            </li>
+            <li><a href="#t4">Pneumonia</a></li>
+            <li><a href="#t5">COVID-19</a></li>
+        </ol>
+    </aside>
+    <section class="cent">
+        <center>
+            <p
+                style="color: red; font-family: 'Algerian','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 50px;">
+                Lung Diseases</p>
+        </center><br>
+        <p>We always hear about people having different kind of <b>lung problems and diseases</b>. But what do we really
+            know about lung diseases.</p><br>
+        <p>Lung disease is any problem in the lungs that prevents the lungs from working properly. There are three main
+            types of lung disease:</p><br>
+        <ol>
+            <li>
+                <dl>
+                    <dt id="t1" style="color: rgb(10, 110, 241); font-size: 22px;"><b>Airway Diseases</b></dt>
+                    <dd>- These diseases affect the tubes (airways) that carry oxygen and other gases into and out of
+                        the
+                        lungs. They usually cause a narrowing or blockage
+                        of the airways. Airway diseases include asthma, chronic obstructive pulmonary disease (COPD),
+                        bronchiolitis, and bronchiectasis (which also is the main
+                        disorder for persons with cystic fibrosis). People with airway diseases often say they feel as
+                        if
+                        they're "trying to breathe out through a straw."<br>
+                        <br>
+                        <img src="{{url_for('static', filename='airway disease.jpg')}}" alt="Airway Disease" class="center" width="500" height="350">
+                    </dd>
+                </dl>
+            </li>
+            <br>
+            <li>
+                <dl>
+                    <dt id="t2" style="color: rgb(10, 110, 241); font-size: 22px;"><b>Lung Tissue Diseases</b></dt>
+                    <dd>- These diseases affect the structure of the lung tissue. Scarring or inflammation of the tissue
+                        makes the lungs unable to expand fully
+                        (restrictive lung disease). This makes it hard for the lungs to take in oxygen and release
+                        carbon
+                        dioxide. People with this type of lung
+                        disorder often say they feel as if they are "wearing a too-tight sweater or vest." As a result,
+                        they
+                        can't breathe deeply. Pulmonary fibrosis
+                        and sarcoidosis are examples of lung tissue disease.
+                        <br>
+                        <img src="{{url_for('static', filename='lung tissue disease.jpg')}}" alt="Lung Tissue Disease" class="center" width="500"
+                            height="330">
+                    </dd>
+                </dl>
+            </li>
+            <br>
+            <li>
+                <dl>
+                    <dt id="t3" style="color: rgb(10, 110, 241); font-size: 22px;"><b>Lung Circulation Diseases</b></dt>
+                    <dd>- These diseases affect the blood vessels in the lungs. They are caused by clotting, scarring,
+                        or
+                        inflammation of the blood
+                        vessels. They affect the ability of the lungs to take up oxygen and release carbon dioxide.
+                        These
+                        diseases may also affect
+                        heart function. An example of a lung circulation disease is pulmonary hypertension. People with
+                        these conditions often feel
+                        very short of breath when they exert themselves.
+                        <br>
+                        <img src="{{url_for('static', filename='lung circulation disease.jpg')}}" alt="Lung Circulation Disease" class="center"
+                            width="500" height="310">
+                    </dd>
+                </dl>
+            </li>
+        </ol><br>
+        <p>The diseases that can be detected here are Pneumonia and COVID-19. These are types of <b>Lung Tissue
+                Disease</b>.
+        </p><br>
+        <p>We use Chest X-Ray as an input and the X-Ray image is then fed to the Machine Learning Model to determine the
+            presence of Pneumonia and COVID-19.
+        </p><br>
+        <ol>
+            <li>
+                <dl>
+                    <dt id="t4" style="color: rgb(178, 152, 49); font-size: 22px;"><b>PNEUMONIA</b></dt>
+                    <dd>This disease is most commonly found in children between the age of 1 to 5 years. It is most
+                        often caused by bacteria or viruses, which can be spread by direct contact with a person who is
+                        already infected with them.
+                        <br><br>
+                        <iframe class="center" width="720" height="400"
+                            src="https://www.youtube.com/embed/rVL-0KpoqP4?start=3" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </dd>
+                </dl>
+            </li>
+            <br>
+            <li>
+                <dl>
+                    <dt id="t5" style="color: rgb(178, 152, 49); font-size: 22px;"><b>COVID-19</b></dt>
+                    <dd>This disease is caused by the SARS-CoV-2 virus. It is spread mainly through respiratory droplets
+                        and small particles produced when an infected person coughs, sneezes, or talks in crowded or
+                        poorly ventilated indoor settings.
+                        <br><br>
+                        <iframe class="center" width="720" height="400" src="https://www.youtube.com/embed/4pVXILBOsHQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </dd>
+                </dl>
+            </li>
+        </ol>
+    </section>
+</body>
+
+</html>
